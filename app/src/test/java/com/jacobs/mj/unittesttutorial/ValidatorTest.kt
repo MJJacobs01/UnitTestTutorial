@@ -19,4 +19,22 @@ class ValidatorTest{
         val result = Validator.validateInput(amount, description)
         assertThat(result).isEqualTo(true)
     }
+
+    @Test
+    fun whenAmountIsZero(){
+        //  Test case for passing validation
+        val amount = 0
+        val description = "Same random description"
+        val result = Validator.validateInput(amount, description)
+        assertThat(result).isEqualTo(false)
+    }
+
+    @Test
+    fun whenDescriptionIsEmpty(){
+        //  Test case for passing validation
+        val amount = 100
+        val description = ""
+        val result = Validator.validateInput(amount, description)
+        assertThat(result).isEqualTo(false)
+    }
 }

@@ -5,7 +5,7 @@ package com.jacobs.mj.unittesttutorial
  */
 object Validator {
 
-    fun validateInput (amount:Int, description:String){
-
+    fun validateInput (amount:Int, description:String):Boolean{
+        return !(amount <= 0 || description.isEmpty())
     }
 }
